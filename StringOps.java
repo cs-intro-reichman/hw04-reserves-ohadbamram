@@ -22,9 +22,7 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        String s = "MMMM";
-        char c = 'M';
-        printArray(allIndexOf(s, c));
+        System.out.println(capVowelsLowRest("OnE twO thrEE wOrld"));
     }
 
     public static String capVowelsLowRest (String string) {
@@ -32,6 +30,8 @@ public class StringOps {
        for(int i = 0;i < string.length();i++){
         if (isLowerVowel(string.charAt(i))) {
           newS += (char)(string.charAt(i) - 32);  
+        }else if (isHigherVowel(string.charAt(i))) {
+            newS += string.charAt(i);
         }else{
             if (!isLowerCase(string.charAt(i))) {
             newS += (char)(string.charAt(i) + 32);
@@ -57,6 +57,23 @@ public class StringOps {
             case 'o':
             return true;
             case 'u':
+            return true;                 
+        
+            default:
+                return false;
+        }
+    }
+    public static boolean isHigherVowel(char c){ //checks wether a char is a lower case vowel
+        switch (c) {
+            case 'A':
+                return true;
+            case 'E':
+            return true; 
+            case 'I':
+            return true;
+            case 'O':
+            return true;
+            case 'U':
             return true;                 
         
             default:
