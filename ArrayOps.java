@@ -13,18 +13,37 @@ public class ArrayOps {
         return missingInt;
     }
 
-    public static int secondMaxValue(int [] array) {
+    public static int secondMaxValue(int [] array) { //returns second max value of array
         int max = 0;
         int max2 = 0;
         for(int i = 0; i<array.length;i++){ //gets max value of the array
             max = Math.max(max, array[i]);
         }
         for(int i = 0;i < array.length;i++){ //gets the max value of the array thats samller than max
-            if ((max >= array[i]) && (array[i] > max2)) {
+            if ((max > array[i]) && (array[i] > max2)) {
                 max2 = array[i];
             }
         }
+        if (maxTwice(array)) {
+            max2 = max;
+        }
         return max2;
+    }
+    public static boolean maxTwice(int [] array){ //checks wether the max value appears more than once
+        int max = 0;
+        int count = 0;
+        for(int i = 0; i<array.length;i++){ 
+            max = Math.max(max, array[i]);
+        }
+        for(int i = 0; i<array.length;i++){
+            if (array[i] == max) {
+                count++;
+            }
+        }
+        if (count >=2) {
+            return true;
+        }else
+        return false;
     }
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) { //check wether two arrays contain the same elements
