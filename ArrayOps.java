@@ -20,7 +20,7 @@ public class ArrayOps {
             max = Math.max(max, array[i]);
         }
         for(int i = 0;i < array.length;i++){ //gets the max value of the array thats samller than max
-            if ((max > array[i]) && (array[i] > max2)) {
+            if ((max >= array[i]) && (array[i] > max2)) {
                 max2 = array[i];
             }
         }
